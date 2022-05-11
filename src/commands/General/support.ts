@@ -19,11 +19,11 @@ export default class Command extends BaseCommand {
   run = async (M: ISimplifiedMessage): Promise<void> => {
     await this.client.sendMessage(
       M.sender.jid,
-      ` _*I'M FROM CELESTIAL 🌌*\n\n
-        _*CELESTIAL NEWS*_:https://chat.whatsapp.com/DmsXJlgwaF9KncMAwEtRJP\n\n 
-        _*🌌 CELESTIAL 🌌*_:https://chat.whatsapp.com/IZYFwOGf7I12x0zFUDukSY\n\n
-        _*CELESTIAL CASINO*_:https://chat.whatsapp.com/IUIAiDPgKCp4LabWiOf7HE\n\n 
-        _*CELESTIAL QUIZ*_:https://chat.whatsapp.com/Fp0lBMx8kKvA5yRJQkt0k9`,
+      ` *I'M FROM CELESTIAL*\n\n
+        *CELESTIAL NEWS*:https://chat.whatsapp.com/DmsXJlgwaF9KncMAwEtRJP\n\n 
+        *CELESTIAL*:https://chat.whatsapp.com/IZYFwOGf7I12x0zFUDukSY\n\n
+        *CELESTIAL CASINO*:https://chat.whatsapp.com/IUIAiDPgKCp4LabWiOf7HE\n\n 
+        *CELESTIAL QUIZ*:https://chat.whatsapp.com/Fp0lBMx8kKvA5yRJQkt0k9`,
 
       MessageType.text
     );

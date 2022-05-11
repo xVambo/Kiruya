@@ -50,7 +50,7 @@ export default class Command extends BaseCommand {
     }
     const buttonMessage: any = {
       contentText: `${text}`,
-      footerText: "©Celestial 2022",
+      footerText: "© Celestial 2022",
       buttons: buttons,
       headerType: 1,
     };

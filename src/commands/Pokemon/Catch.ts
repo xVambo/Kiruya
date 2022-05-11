@@ -80,7 +80,7 @@ export default class Command extends BaseCommand {
       );
       if (data.party.length < 6) {
         const buttonMessage: any = {
-          contentText: `Well done. You caught a level ${Level} ${this.client.util.capitalize(
+          contentText: `🎉Well done. You caught a level ${Level} ${this.client.util.capitalize(
             Name
           )}.`,
           footerText: "© Celestial 2022",

@@ -44,7 +44,7 @@ export default class Command extends BaseCommand {
           categories[info.config.category].push(info);
         }
       }
-      let text = `🎉Hi There *@${
+      let text = `♦️ Konichiwa! *@${
         user.split("@")[0]
       }*, I'm _*${this.client.user.name}*_.\n\nMy prefix is - "${
         this.client.config.prefix
@@ -245,7 +245,7 @@ export default class Command extends BaseCommand {
       }
       const button: any = {
         buttonText: "Command List",
-        footerText: "🎇 Beyond 🎇",
+        footerText: "🎇© Celestial 🎇",
         description: `${text} 📝 *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`,
         sections: sections,
         listType: 1,

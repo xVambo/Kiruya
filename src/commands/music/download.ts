@@ -28,11 +28,11 @@ export default class Command extends BaseCommand {
     const { videos } = await yts(term);
     if (!videos || videos.length <= 0)
       return void M.reply(
-        `⚓ No Matching videos found for the term : *${term}*`
+        `No Matching videos found for the term : *${term}*`
       );
     const audio = new YT(videos[0].url, "audio");
     if (!audio.url) return;
-    M.reply("🎆downloading");
+    M.reply("downloading");
     this.client
       .sendMessage(M.from, await audio.getBuffer(), MessageType.audio, {
         quoted: M.WAMessage,

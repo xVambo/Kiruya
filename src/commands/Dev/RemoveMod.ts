@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
       description: "Will remove a person as a mod",
       category: "dev",
       usage: `${client.config.prefix}removemod [@tag]`,
-      modsOnly: true,
+      modsOnly: false,
       baseXp: 0,
     });
   }

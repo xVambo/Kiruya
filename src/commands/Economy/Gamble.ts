@@ -50,7 +50,7 @@ export default class Command extends BaseCommand {
     const buttons = [
       {
         buttonId: "wallet",
-        buttonText: { displayText: `${this.client.config.prefix}wallet` },
+        buttonText: { displayText: `#wallet` },
         type: 1,
       },
     ];
@@ -68,8 +68,8 @@ export default class Command extends BaseCommand {
           amount - wallet
         } gold more to gamble with this amount of gold*.`
       );
-    if (amount > 15000)
-      return void M.reply(`🟥 *You can't gamble gold more than 15000.*`);
+    if (amount > 20000)
+      return void M.reply(`🟥 *You can't gamble gold more than 20000.*`);
     if (!directions.includes(luck))
       return void M.reply(
         `🟥 *The direction should be left or right. Example - ${this.client.config.prefix}gamble ${amount} left.*`
@@ -113,7 +113,7 @@ export default class Command extends BaseCommand {
       });
       await M.reply(await sticker.build(), MessageType.sticker, Mimetype.webp);
       const buttonMessage: any = {
-        contentText: `📈 You won *${amount} gold*.`,
+        contentText: `🎉 You won *${amount} gold*.`,
         footerText: "© Celestial 2022",
         buttons: buttons,
         headerType: 1,

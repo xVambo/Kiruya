@@ -1,7 +1,7 @@
 <h1 align="center">Celestial<br></h1>
 <div align="center">
 <img src="https://www.linkpicture.com/q/IMG-20220204-WA0282.jpg" width="540" height="300" />
-  <h1 align="center"><br></h1>
+<h1 align="center"><br></h1>
 Button : If you are deploying normally
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/xVambo/Bot)

@@ -22,14 +22,14 @@ export default class Command extends BaseCommand {
   run = async (M: ISimplifiedMessage): Promise<void> => {
     if (!M.urls.length)
       return void M.reply(
-        `🔎 Provide the Spotify Track URL that you want to download`
+        `Provide the Spotify Track URL that you want to download`
       );
     const url = M.urls[0];
     const track = new Spotify(url);
     const info = await track.getInfo();
     if (info.error)
       return void M.reply(
-        `⚓ Error Fetching: ${url}. Check if the url is valid and try again`
+        `Error Fetching: ${url}. Check if the url is valid and try again`
       );
     const caption = `🎧 *Title:* ${info.name || ""}\n🎤 *Artists:* ${(
       info.artists || []

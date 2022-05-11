@@ -146,7 +146,7 @@ export default class MessageHandler {
       return void null;
     if (!command)
       return void M.reply(
-        `No such command found use something from the *${this.client.config.prefix}help* list.`
+        `No command found use something from the *${this.client.config.prefix}help* list.`
       );
     const user = await this.client.getUser(M.sender.jid);
     if (user.ban) return void M.reply("You're Banned from using commands.");

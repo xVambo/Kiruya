@@ -1,8 +1,5 @@
-<h1 align="center">Seele BOT MD<br></h1>
-<p align="center">
+<div align="center">
 <img src="https://www.linkpicture.com/q/IMG-20220204-WA0282.jpg" width="540" height="300" />
-<p align="center">
-# **Celestial**
 
  Button : If you are deploying normally
 

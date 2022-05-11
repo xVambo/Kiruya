@@ -21,7 +21,7 @@ export default class Command extends BaseCommand {
     const buttons = [
       {
         buttonId: "wallet",
-        buttonText: { displayText: `${this.client.config.prefix}wallet` },
+        buttonText: { displayText: `#wallet` },
         type: 1,
       },
     ];

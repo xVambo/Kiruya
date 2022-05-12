@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
       description: "Will display the info of the bot",
       category: "dev",
       usage: `${client.config.prefix}info`,
-      modsOnly: true,
+      modsOnly: false,
       baseXp: 0,
     });
   }

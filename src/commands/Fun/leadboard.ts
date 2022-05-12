@@ -51,7 +51,7 @@ export default class Command extends BaseCommand {
     }
     console.log(message);
     M.reply(
-      await request.buffer("https://wallpapercave.com/uwp/uwp1997564.jpeg"),
+      await request.buffer("https://www.linkpicture.com/q/wp3470722-space-wallpaper-hd-purple-01.jpeg"),
       MessageType.image,
       undefined,
       mention,

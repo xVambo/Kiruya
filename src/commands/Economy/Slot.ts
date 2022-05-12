@@ -71,7 +71,7 @@ export default class Command extends BaseCommand {
       "lose",
       "lose",
       "win",
-      "jackpot",
+      "win",
       "lose",
       "win",
       "lose",

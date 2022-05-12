@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
 
     const buttonMessage: any = {
       contentText: `\n\n_*HELLO THERE! CELESTIAL BOT HERE*_\n\n 1.spamming cmds in casino=2days ban\n\n 2.don't dm mods for asking to be a mod.\n\n 3.don't ask us to sell our bots.\n\n 4.the more good you are gonna be as a Celestial user the more rewards you'll get\n\n`,
-      footerText: "🎇©Celestial 2022🎇",
+      footerText: "© Celestial 2022",
       buttons: buttons,
       headerType: 1,
     };

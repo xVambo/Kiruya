@@ -92,7 +92,7 @@ export default class Command extends BaseCommand {
       "lose",
       "lose",
       "lose"
-      "jackpot",
+      "jackpot"
     ];
     const z = results[Math.floor(Math.random() * results.length)];
     if (!joined)

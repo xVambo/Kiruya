@@ -57,15 +57,41 @@ export default class Command extends BaseCommand {
       "win",
       "lose",
       "lose",
+      "win",
       "lose",
       "lose",
       "lose",
       "win",
+      "lose",
+      "lose",
+      "lose",
       "win",
+      "lose",
+      "lose",
+      "lose",
+      "lose",
+      "win",
+      "jackpot",
+      "lose",
+      "win",
+      "lose",
       "win",
       "lose",
       "lose",
       "win",
+      "lose",
+      "lose",
+      "lose",
+      "win",
+      "lose",
+      "lose",
+      "lose",
+      "lose",
+      "win",
+      "lose",
+      "lose",
+      "lose",
+      "lose"
       "jackpot",
     ];
     const z = results[Math.floor(Math.random() * results.length)];
@@ -118,7 +144,7 @@ export default class Command extends BaseCommand {
         { jid: user },
         { $set: { slot: Date.now() } }
       );
-      const text = `${head}\n\n${o}\n\n📈 You won *${gold} gold*.`;
+      const text = `${head}\n\n${o}\n\n🎉 You won *${gold} gold*.`;
       const buttonMessage: any = {
         contentText: `${text}`,
         footerText: "© Celestial 2022",

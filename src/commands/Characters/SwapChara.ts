@@ -7,9 +7,9 @@ export default class Command extends BaseCommand {
   constructor(client: WAClient, handler: MessageHandler) {
     super(client, handler, {
       command: "schara",
-      description: `Swaps the index number of characters in your gallery.`,
+      description: `Swaps the index number of characters in your deck.`,
       category: "characters",
-      usage: `${client.config.prefix}schara [character_index_number_in_your_gallery] [character_index_number_in_your_gallery]`,
+      usage: `${client.config.prefix}schara [character_index_number_in_your_deck] [character_index_number_in_your_deck]`,
       baseXp: 0,
     });
   }
@@ -20,7 +20,7 @@ export default class Command extends BaseCommand {
   ): Promise<void> => {
     if (!joined)
       return void M.reply(
-        `🟥 *Provide the index numbers of the characters in your gallery that you wanna swap. Example - ${this.client.config.prefix}schara 3 1*`
+        `🟥 *Provide the index numbers of the characters in your deck that you wanna swap. Example - ${this.client.config.prefix}schara 3 1*`
       );
     const terms: any = joined.split(" ");
     if (!terms[1] || terms[1] === "")
@@ -38,7 +38,7 @@ export default class Command extends BaseCommand {
       terms[1] > data.gallery.length
     )
       return void M.reply(
-        `🟥 *Invalid gallery index number.* *Example - ${this.client.config.prefix}swap 1 4*`
+        `🟥 *Invalid deck index number.* *Example - ${this.client.config.prefix}swap 1 4*`
       );
     const i = terms[0] - 1;
     const w = terms[1] - 1;

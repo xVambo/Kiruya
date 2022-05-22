@@ -182,7 +182,68 @@ export default class MessageHandler {
     }
   };
 
-  moderate = async (M: ISimplifiedMessage): Promise<void> => {
+ summonHaigusha = async (M: ISimplifiedMessage): Promise<void> => {
+    const time = 20000;
+    const user = M.sender.jid;
+    const cd = await (await this.client.getCd(user)).haigusha;
+    if (time - (Date.now() - cd) > 0) {
+      const timeLeft = ms(time - (Date.now() - cd));
+      return void M.reply(
+        `Woahh! Slow down, you can use this command again in *${timeLeft.seconds} second(s)*`
+      );
+    }
+    const haigusha = await marika.getRandomCharacter();
+    const source = await marika.getCharacterAnime(haigusha.mal_id);
+    await this.client.DB.cd.updateOne(
+      { jid: M.sender.jid },
+      { $set: { haigusha: Date.now() } }
+    );
+    await this.client.DB.group.updateMany(
+      { jid: M.from },
+      {
+        $set: {
+          "haigushaResponse.name": haigusha.name,
+          "haigushaResponse.id": haigusha.mal_id,
+          "haigushaResponse.claimable": true,
+        },
+      }
+    );
+    let text = "";
+    text += `💙 *Name: ${haigusha.name}*\n\n`;
+    if (haigusha.nicknames.length > 0)
+      text += `🖤 *Nicknames: ${haigusha.nicknames.join(", ")}*\n\n`;
+    text += `💛 *Source: ${source[0].anime.title}*\n\n`;
+    text += `❤ *Description:* ${haigusha.about}`;
+    const buffer = await request.buffer(haigusha.images.jpg.image_url);
+    const media = await this.client.prepareMessage(
+      M.from,
+      buffer,
+      MessageType.image
+    );
+    const buttons = [
+      {
+        buttonId: "marry",
+        buttonText: { displayText: `${this.client.config.prefix}marry` },
+        type: 1,
+      },
+      {
+        buttonId: "divorce",
+        buttonText: { displayText: `${this.client.config.prefix}divorce` },
+        type: 1,
+      },
+    ];
+    const buttonMessage: any = {
+      contentText: `${text}`,
+      footerText: "© Celestial 2022",
+      buttons: buttons,
+      headerType: 4,
+      imageMessage: media?.message?.imageMessage,
+    };
+    await M.reply(buttonMessage, MessageType.buttonsMessage);
+  };
+}
+
+ moderate = async (M: ISimplifiedMessage): Promise<void> => {
     if (M.sender.isAdmin) return void null;
     if (M.urls.length) {
       const groupinvites = M.urls.filter((url) =>
